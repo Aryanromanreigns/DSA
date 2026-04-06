@@ -3,6 +3,7 @@ public:
     bool issafe(int row , int col ,int n , vector<string>temp){
         int duprow = row ;
         int dupcol = col;
+        //upper diagonal
         while(row >= 0 && col >= 0){
             if(temp[row][col] == 'Q') return false;
             row--;
@@ -10,7 +11,7 @@ public:
         }
         row =  duprow;
         col = dupcol;
-
+        //left diagonal
         while(col >= 0){
             if(temp[row][col] == 'Q') return false;
             col--;
@@ -18,7 +19,7 @@ public:
 
         row = duprow;
         col =dupcol;
-
+        //lower diagonal
         while(row < n && col >= 0){
             if(temp[row][col] == 'Q') return false;
             row++;
